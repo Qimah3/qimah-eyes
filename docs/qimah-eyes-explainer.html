@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qimah Eyes - What We're Building</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1E6649;
+    --green-hover: #155039;
+    --green-light: #E8F5EE;
+    --green-text: #055E55;
+    --green-mid: #1E9A6D;
+    --green-pale: #d4eddf;
+
+    --bg: #FCFBF9;
+    --bg-2: #F5F3EF;
+    --bg-3: #EEEAE3;
+    --card: #FFFFFF;
+    --border: #E8E4D8;
+    --border-light: #F0EDE6;
+    --text: #1A1A1A;
+    --text-2: #5A5A5A;
+    --text-3: #999;
+
+    --amber: #C48A0A;
+    --amber-light: #FFF8E7;
+    --amber-border: #E8D5A0;
+
+    --blue: #2E7CB8;
+    --blue-light: #EBF4FC;
+    --blue-border: #A8CCE8;
+
+    --purple: #8B5CF6;
+    --purple-light: #F3EFFE;
+    --purple-border: #C4B5FD;
+
+    --display: 'Outfit', sans-serif;
+    --body: 'Nunito', sans-serif;
+    --radius: 16px;
+    --radius-sm: 12px;
+    --radius-xs: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--body);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 40px 60px;
+  }
+
+  /* === HEADER === */
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .header-eyebrow {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin-bottom: 8px;
+  }
+  .header h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 2.4rem;
+    letter-spacing: -0.03em;
+    color: var(--green);
+    margin-bottom: 10px;
+  }
+  .header-sub {
+    font-size: 1rem;
+    color: var(--text-2);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* === ONE-LINER === */
+  .one-liner {
+    background: var(--green);
+    color: white;
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+  .one-liner p {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+  .one-liner strong {
+    color: var(--green-pale);
+  }
+
+  /* === SECTION === */
+  .section {
+    margin-bottom: 32px;
+  }
+  .section-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--green);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+
+  /* === THREE LAYERS === */
+  .layers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .layer {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    position: relative;
+  }
+  .layer-number {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 2rem;
+    color: var(--border);
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    line-height: 1;
+  }
+  .layer-label {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .layer:nth-child(1) .layer-label { color: var(--blue); }
+  .layer:nth-child(2) .layer-label { color: var(--purple); }
+  .layer:nth-child(3) .layer-label { color: var(--green); }
+  .layer-name {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .layer-desc {
+    font-size: 0.85rem;
+    color: var(--text-2);
+    line-height: 1.55;
+  }
+  .layer-tech {
+    margin-top: 10px;
+    display: inline-block;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 6px;
+    background: var(--bg-2);
+    color: var(--text-3);
+  }
+
+  /* === FLOW DIAGRAM === */
+  .flow {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 32px;
+  }
+  .flow-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .flow-box {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 0.8rem;
+    padding: 8px 14px;
+    border-radius: var(--radius-xs);
+    white-space: nowrap;
+  }
+  .flow-box.source {
+    background: var(--blue-light);
+    color: var(--blue);
+    border: 1px solid var(--blue-border);
+  }
+  .flow-box.process {
+    background: var(--purple-light);
+    color: var(--purple);
+    border: 1px solid var(--purple-border);
+  }
+  .flow-box.store {
+    background: var(--green-light);
+    color: var(--green);
+    border: 1px solid var(--green-pale);
+  }
+  .flow-box.output {
+    background: var(--amber-light);
+    color: var(--amber);
+    border: 1px solid var(--amber-border);
+  }
+  .flow-arrow {
+    color: var(--text-3);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  /* === YOUR ROLE === */
+  .role-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .role-card {
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 16px 18px;
+  }
+  .role-card-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .role-card-desc {
+    font-size: 0.82rem;
+    color: var(--text-2);
+    line-height: 1.5;
+  }
+
+  /* === TECH STACK === */
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .stack-chip {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 0.78rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    color: var(--text-2);
+  }
+  .stack-chip.primary {
+    border-color: var(--green);
+    color: var(--green);
+    background: var(--green-light);
+  }
+
+  /* === FOOTER === */
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1.5px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--text-3);
+  }
+  .footer strong {
+    color: var(--text-2);
+  }
+
+  @media print {
+    body { background: white; }
+    .page { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Qimah Eyes</h1>
+    <p class="header-sub">
+      The analytics brain behind Qimah - an internal dashboard that turns raw platform data into actionable decisions for the team.
+    </p>
+  </div>
+
+  <!-- ONE-LINER -->
+  <div class="one-liner">
+    <p>
+      Qimah is an online education platform. Right now, our data lives in <strong>7+ separate systems</strong>.
+      <br>Qimah Eyes pulls it all into one place so we can see what's working, what's broken, and what to do next.
+    </p>
+  </div>
+
+  <!-- THE PROBLEM -->
+  <div class="section">
+    <div class="section-title">
+      <span class="icon" style="background: var(--amber-light); color: var(--amber);">?</span>
+      Why Are We Building This?
+    </div>
+    <div class="flow">
+      <p style="font-size: 0.88rem; color: var(--text-2); line-height: 1.7;">
+        Today, checking revenue means opening <strong style="color: var(--text)">WooCommerce</strong>. Checking student progress means <strong style="color: var(--text)">LearnDash</strong>. Email health is in <strong style="color: var(--text)">Resend</strong>. Recruitment is in <strong style="color: var(--text)">ClickUp</strong>. Video stats are in <strong style="color: var(--text)">Bunny CDN</strong>.
+        No one has the full picture. Qimah Eyes fixes that - one screen, every morning, all the signals that matter.
+      </p>
+    </div>
+  </div>
+
+  <!-- DATA FLOW -->
+  <div class="section">
+    <div class="section-title">
+      <span class="icon" style="background: var(--blue-light); color: var(--blue);">~</span>
+      How Data Flows
+    </div>
+    <div class="flow">
+      <div class="flow-row" style="margin-bottom: 14px;">
+        <span class="flow-box source">WordPress</span>
+        <span class="flow-box source">Moyasar</span>
+        <span class="flow-box source">Bunny CDN</span>
+        <span class="flow-box source">Resend</span>
+        <span class="flow-box source">ClickUp</span>
+        <span class="flow-box source">PostHog</span>
+      </div>
+      <div class="flow-row" style="margin-bottom: 6px;">
+        <span class="flow-arrow" style="margin-left: 80px;">|</span>
+      </div>
+      <div class="flow-row" style="margin-bottom: 6px;">
+        <span style="font-size: 0.75rem; color: var(--text-3); margin-left: 40px;">webhooks + nightly API pulls</span>
+      </div>
+      <div class="flow-row" style="margin-bottom: 6px;">
+        <span class="flow-arrow" style="margin-left: 80px;">v</span>
+      </div>
+      <div class="flow-row" style="margin-bottom: 14px;">
+        <span class="flow-box process">n8n (automation)</span>
+        <span class="flow-arrow">-></span>
+        <span class="flow-box process">Node.js scripts</span>
+        <span class="flow-arrow">-></span>
+        <span class="flow-box store">Postgres DB</span>
+        <span class="flow-arrow">-></span>
+        <span class="flow-box output">Next.js Dashboard</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- THREE LAYERS -->
+  <div class="section">
+    <div class="section-title">
+      <span class="icon" style="background: var(--green-light); color: var(--green);">3</span>
+      Three Layers of the Pipeline
+    </div>
+    <div class="layers">
+      <div class="layer">
+        <div class="layer-number">1</div>
+        <div class="layer-label">Ingestion</div>
+        <div class="layer-name">Collect Data</div>
+        <div class="layer-desc">
+          Receives real-time webhooks from WordPress (orders, activity, security events) and pulls APIs nightly (Moyasar, Bunny, Resend, ClickUp, PostHog).
+        </div>
+        <span class="layer-tech">n8n - 14 workflows</span>
+      </div>
+      <div class="layer">
+        <div class="layer-number">2</div>
+        <div class="layer-label">Computation</div>
+        <div class="layer-name">Crunch Numbers</div>
+        <div class="layer-desc">
+          Nightly scripts that compute streaks, instructor scores, cohort stats, session patterns, and run 20 insight rules + weekly AI analysis.
+        </div>
+        <span class="layer-tech">Node.js + SQL</span>
+      </div>
+      <div class="layer">
+        <div class="layer-number">3</div>
+        <div class="layer-label">Storage</div>
+        <div class="layer-name">Serve the Dashboard</div>
+        <div class="layer-desc">
+          33 tables of clean, queryable data. The Next.js dashboard reads from Postgres and presents 9 sections: Revenue, Learning, Retention, and more.
+        </div>
+        <span class="layer-tech">Postgres 16 + Next.js</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- YOUR ROLE -->
+  <div class="section">
+    <div class="section-title">
+      <span class="icon" style="background: var(--purple-light); color: var(--purple);">*</span>
+      What You'll Be Doing
+    </div>
+    <div class="role-grid">
+      <div class="role-card">
+        <div class="role-card-title">n8n Workflows</div>
+        <div class="role-card-desc">Build the automation workflows that receive webhooks and pull data from external APIs. Visual, drag-and-drop - you'll learn fast.</div>
+      </div>
+      <div class="role-card">
+        <div class="role-card-title">Node.js Scripts</div>
+        <div class="role-card-desc">Write the nightly computation scripts - mostly SQL queries wrapped in JS. Streaks, scores, aggregations.</div>
+      </div>
+      <div class="role-card">
+        <div class="role-card-title">Postgres Queries</div>
+        <div class="role-card-desc">Design upserts, write window functions, build aggregations. The heavy lifting happens in SQL, not code.</div>
+      </div>
+      <div class="role-card">
+        <div class="role-card-title">Dashboard UI</div>
+        <div class="role-card-desc">Help build the Next.js frontend that visualizes all of this - charts, tables, real-time pulse indicators.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TECH STACK -->
+  <div class="section">
+    <div class="section-title">
+      <span class="icon" style="background: var(--bg-2); color: var(--text-3);">#</span>
+      Tech Stack
+    </div>
+    <div class="stack">
+      <span class="stack-chip primary">n8n</span>
+      <span class="stack-chip primary">Node.js</span>
+      <span class="stack-chip primary">Postgres 16</span>
+      <span class="stack-chip primary">Next.js</span>
+      <span class="stack-chip">PostHog</span>
+      <span class="stack-chip">WordPress REST API</span>
+      <span class="stack-chip">Hetzner VPS</span>
+      <span class="stack-chip">Claude API (weekly insights)</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <strong>Qimah Eyes</strong> - Full specs: <code>docs/superpowers/specs/2026-03-15-qimah-eyes-data-pipeline-design.md</code>
+    <br>and <code>docs/superpowers/specs/2026-03-13-god-dashboard-design.md</code>
+  </div>
+
+</div>
+</body>
+</html>
